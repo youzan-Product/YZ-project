@@ -98,6 +98,7 @@ export default {
 </script>
 <style lang='scss' scoped>
 .search{
+  margin-bottom: 16px;
     padding: 16px;
     background: #f7f8fa;
     .box{
