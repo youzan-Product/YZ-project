@@ -1,17 +1,45 @@
 <template>
   <div id="app">
 
-    <router-view></router-view>
+    <el-container>
+
+
+      <el-aside width='92px'>
+        <Sidebar></Sidebar>
+      </el-aside>
+
+      <el-container>
+        <el-header>
+          <Header></Header>
+        </el-header>
+        <Mainheader></Mainheader>
+        <el-main>
+          <MainCon></MainCon>
+        </el-main>
+      </el-container>
+
+  </el-container>
+
+
   </div>
 </template>
 
 <script>
+import Header from "@/components/Header.vue";
+import Sidebar from "@/components/Sidebar.vue";
+import MainCon from "@/components/MainCon.vue";
+import Mainheader from "@/components/Mainheader.vue"
+
 
 
 export default {
   name: 'app',
-  components: {
-
+  components:{
+    Header,
+    Sidebar,
+    MainCon,
+    Mainheader,
+    
   }
 }
 </script>
