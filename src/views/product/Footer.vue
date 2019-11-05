@@ -14,6 +14,6 @@ export default {
     background-size: 76px 27px;
     width: 100%;
     height: 60px;
-    margin-top:20px;
+    margin-top:80px;
 }
 </style>
