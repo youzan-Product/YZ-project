@@ -1,8 +1,5 @@
 <template>
-    <!-- <div class="home">
-        <h1>1234567</h1>
-    </div> -->
-    <div>111</div>
+    <div></div>
 </template>
 
 <script>
