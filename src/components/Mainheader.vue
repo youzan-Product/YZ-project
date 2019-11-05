@@ -6,6 +6,7 @@
         <span>SVIP</span>
         <span>有赞担保</span>
       </div>
+      
       <div class="header-right">
           <i class="fa fa-user-circle"></i>
           <span>13200000000</span>
@@ -16,10 +17,8 @@
 
 <script>
 export default {
-  name:"mainheader",
-  data: () => ({
-      show3: true
-    })
+  name: "mainheader",
+  
 };
 </script>
 
@@ -58,6 +57,10 @@ export default {
       border: 1px solid #155bd4;
     }
   }
+  // .header-center {
+  //   float: left;
+  //   margin-left: 120px;
+  // }
   .header-right {
     float: right;
     cursor: pointer;

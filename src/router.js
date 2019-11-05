@@ -3,7 +3,8 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 // 引入路由文件
-import General from '@/views/home/General .vue'
+// import Main from '@/components/Main.vue'
+import General from '@/views/home/General.vue'
 import Boss from "@/views/boss/Boss.vue"
 import Indent from '@/views/indent/Indent.vue'
 

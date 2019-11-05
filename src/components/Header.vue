@@ -18,11 +18,9 @@ export default {};
 .header {
   width: 100%;
   height: 100%;
-  background: #fff7cc;
   overflow: hidden;
   font-size: 12px;
   box-sizing: border-box;
-  padding: 0 10px;
   .header-titel {
     padding: 10px 0 10px 30px;
     .title-left {
