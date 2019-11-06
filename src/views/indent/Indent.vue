@@ -1,6 +1,8 @@
 <template>
 <el-container>
-  <el-aside width="160px">导航</el-aside>
+  <!-- <el-aside width="160px"> -->
+    <Sidebar></Sidebar>
+  <!-- </el-aside> -->
 <el-container>
   
   <el-header>
@@ -8,18 +10,20 @@
    </el-header>
 
      <el-main>
-       <Main></Main>
+       <Cont></Cont>
       </el-main>
       </el-container>
 </el-container>
 </template>
 <script>
+import Sidebar from "@/components/Sidebar.vue"
 import Header from "./Header.vue";
-import Main from "./Main.vue"
+import Cont from "./Cont.vue"
 export default {
   components: {
     Header,
-    Main
+    Cont,
+    Sidebar
   }
 };
 </script>

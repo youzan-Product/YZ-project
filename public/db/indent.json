@@ -1,0 +1,86 @@
+{
+    "err": 0 ,
+    "msg": "success",
+    "data":[
+        {
+            "article": "紫金葫芦",
+            "cost":"200",
+            "order":"1",
+            "delivery":"快递发货",
+            "buyer":"二狗",
+            "status":"已发货"
+        },
+        {
+            "article": "芭蕉扇",
+            "cost":"600",
+            "order":"1",
+            "delivery":"快递发货",
+            "buyer":"二狗",
+            "status":"已发货"
+        },
+        {
+            "article": "金箍棒",
+            "cost":"1000",
+            "order":"2",
+            "delivery":"上门自提",
+            "buyer":"二狗",
+            "status":"已发货"
+        },
+        {
+            "article": "紫金葫芦",
+            "cost":"200",
+            "order":"2",
+            "delivery":"快递发货",
+            "buyer":"二狗",
+            "status":"已发货"
+        },
+        {
+            "article": "紫金葫芦",
+            "cost":"200",
+            "order":"1",
+            "delivery":"快递发货",
+            "buyer":"二狗",
+            "status":"已发货"
+        },
+        {
+            "article": "紫金葫芦",
+            "cost":"200",
+            "order":"1",
+            "delivery":"快递发货",
+            "buyer":"二狗",
+            "status":"已发货"
+        },
+        {
+            "article": "紫金葫芦",
+            "cost":"200",
+            "order":"1",
+            "delivery":"快递发货",
+            "buyer":"二狗",
+            "status":"已发货"
+        },
+        {
+            "article": "紫金葫芦",
+            "cost":"200",
+            "order":"1",
+            "delivery":"快递发货",
+            "buyer":"二狗",
+            "status":"已发货"
+        },
+        {
+            "article": "紫金葫芦",
+            "cost":"200",
+            "order":"1",
+            "delivery":"快递发货",
+            "buyer":"二狗",
+            "status":"已发货"
+        },
+        {
+            "article": "紫金葫芦",
+            "cost":"200",
+            "order":"1",
+            "delivery":"快递发货",
+            "buyer":"二狗",
+            "status":"已发货"
+        }
+    ]
+}

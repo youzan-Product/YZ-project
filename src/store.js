@@ -28,21 +28,56 @@ function fetch(api, callback) {
 const store = new Vuex.Store({
     state: {
         navList: [],
+        IndList: [],
+        IndList2: []
     },
     mutations: {
         // 边栏列表
         updateNavList(state, payload) {
             state.navList = payload
         },
-
+        //表格
+        updateIndList(state, payload) {
+            state.IndList = payload
+        },
+        //分页
+        updatePage(state,payload){
+             if(payload.list){
+                 state.IndList = payload.list
+             }
+             let page = payload.page || 1
+             let list = state.IndList
+             state.IndList2 = list.slice((page-1)*5,page*5)
+             console.log('--------',state.IndList2)
+        },
+ 
     },
     actions: {
         // 获取边栏列表数据
         getNavList(store) {
             fetch('/db/sideBar.json', (data) => {
-                console.log(data)
+                // console.log(data)
                 store.commit('updateNavList', data)
             })
+        },
+        //获取订单数据
+        getIndList(store) {
+            fetch('/db/indent.json',(data) =>{
+                console.log(data)
+                store.commit('updateIndList',data)
+            })
+        },
+        //分页
+        getPage(store){
+            fetch('/db/indent.json',(data)=>{
+                console.log(data)
+                let payload = {
+                    page: 1,
+                    list: data
+                }
+                store.commit('updatePage',payload)
+            })
+
         }
     }
 })
