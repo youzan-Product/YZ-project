@@ -1,21 +1,16 @@
 <template>
   <div class="chockout">
       <!-- <img src="" alt=""> -->
-      <div class="ico">
-          <i class="el-icon-document-copy"></i>
-         <div class="but">
-            <button>查看我的客户</button>
-      </div>
-      </div>
+     
 
-      <div v-if='list.err==0'>
-            <el-table
-                :data="tableData"
+      <div v-if='list2.length'>
+        <el-table
+                :data="list2"
                 style="width: 100%"
                 max-height="250">
             <el-table-column
                 fixed
-                prop="date"
+                prop="vip-time"
                 label="日期"
                 width="150">
             </el-table-column>
@@ -25,13 +20,13 @@
                 width="120">
             </el-table-column>
             <el-table-column
-                prop="province"
-                label="省份"
+                prop="vip"
+                label="会员"
                 width="120">
             </el-table-column>
             <el-table-column
-                prop="city"
-                label="市区"
+                prop="sex"
+                label="性别"
                 width="120">
             </el-table-column>
             <el-table-column
@@ -44,13 +39,14 @@
                 label="邮编"
                 width="120">
             </el-table-column>
+             
             <el-table-column
                 fixed="right"
                 label="操作"
                 width="120">
             <template slot-scope="scope">
                 <el-button
-                    @click.native.prevent="deleteRow(scope.$index, tableData)"
+                    @click.native.prevent="deleteRow(scope.$index, list2)"
                     type="text"
                     size="small">
                         移除
@@ -58,18 +54,55 @@
             </template>
           </el-table-column>
          </el-table>
-       </div>  
+       </div> 
+        <div class="ico" v-else>
+          <i class="el-icon-document-copy"></i>
+         <div class="but">
+            <button>查看我的客户</button>
+      </div>
+      </div>
+        <div class="block">
+            <!-- <span class="demonstration">直接前往</span> -->
+            <el-pagination
+            @size-change="handleSizeChange"
+            @current-change="handleCurrentChange"
+            :current-page.sync="currentPage3"
+            :page-size="100"
+            layout="prev, pager, next, jumper"
+            :total="1000">
+    </el-pagination>
+  </div>
   </div>
 </template>
 
 <script>
-import { mapState,maoMoutations, mapMutations } from 'vuex'
+import { mapState,mapActions,mapMutations } from 'vuex'
 export default {
+    data:function(){
+        return {
+        currentPage1: 5,
+        currentPage2: 5,
+        currentPage3: 1,
+        currentPage4: 4
+        }
+    },
  computed:{
-            ...mapState(['list'])
+            ...mapState(['list2'])
         },
     methods:{
-        ...mapActions(['getList'])
+        ...mapActions(['getList']),
+        ...mapMutations(['updataList']),
+        deleteRow(index, rows) {
+        rows.splice(index, 1);
+      },
+      
+      handleSizeChange(val) {
+        console.log(`每页 ${val} 条`);
+      },
+      handleCurrentChange(val) {
+        console.log(`当前页: ${val}`);
+        this.updataList({page:val})
+    },
     },
     mounted(){
         this.getList()
@@ -82,6 +115,8 @@ export default {
     border:1px solid #ccc;
     background:#fff;
     margin:20px 0;
+    max-width: 1189px;
+    margin: 24px auto;
    
     // height:246px;
     .ico{

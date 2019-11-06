@@ -11,11 +11,13 @@ Vue.use(Vuex)
     // 显示加载中
     axios({
         method: "GET",
-        url: "http://localhost:8080" + api,
-    }).then(res => {  //接口请求成功执行
+        url: "http://localhost:8081" + api,
+    }).then(res => {  //接口请求成
         let data = null;
-        if (res.data.err === 0) {
+        console.log('res', res)
+        if (res.data.err == 0) {
             data = res.data.data
+            console.log('-------------',data)
         }
         callback && callback(data)
     }).catch(err => {  //接口请求失败执行
@@ -27,18 +29,40 @@ Vue.use(Vuex)
 // 创建一个store仓库
 const store = new Vuex.Store({
     state: {
-       list:[]
+       list:[],
+       list2:[]
     },
     mutations: {
        updataList(state,payload){
-           state.list = payload
+        //    state.list = payload
+        //    console.log(state.list)
+        if(payload.msg){
+            state.list = payload.msg
+        }
+        let page = payload.page||1
+        let msg = state.list
+        state.list2 = msg.slice((page-1)*5,page*5)
+       },
+       updataListArr(state,payload){
+           switch(payload.type){
+               case 'insert':
+                   state.list.push(payload.item)
+                   console.log(payload.item)
+                //    console.log(state.list)
+             break;
+           }
        }
+
     },
     actions: {
         getList(store){
-            fetch('/db/list.json',data=>{
-                console.log(data)
-                store.commit('updataList',data)
+            fetch('/db/list.json',(data) =>{
+                let payload = {
+                    page:1,
+                    msg:data
+                }
+                console.log('------------------',data)
+                store.commit('updataList',payload)
             })
         }
     }
