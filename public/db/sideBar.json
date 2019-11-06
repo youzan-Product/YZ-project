@@ -1,0 +1,26 @@
+{
+    "err": 0,
+    "msg": "success",
+    "data": [
+        {
+            "iconName":"el-icon-data-analysis",
+            "navName":"概况",
+            "path":"/home"
+        },
+        {
+            "iconName":"el-icon-price-tag",
+            "navName":"商品",
+            "path":"/product"
+        },
+        {
+            "iconName":"el-icon-s-order",
+            "navName":"订单",
+            "path":"/indent"
+        },
+        {
+            "iconName":"el-icon-user",
+            "navName":"客户",
+            "path":"/boss"
+        }
+    ]
+}

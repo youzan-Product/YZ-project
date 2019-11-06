@@ -45,3 +45,26 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 * 李铭：商品管理页面
 * 孙益柳：订单查询页面
 * 刘耀东：客户查询页面
+
+# 八、git操作
+* 克隆：git clone 地址
+* 拉取分支：
+	* （1）、git branch 远程仓库地址分支名
+	* （2）、git checkout 自己创建的分支名
+* 提交远程仓库：（每天下课之前先提交一下今日所写代码）
+	* （1）、git add .
+	* （2）、git commit -m "版本描述（自行写，最好写清楚，万一需要版本回退，可以回退到指定版本）"
+	* （3）、git push 远程仓库地址
+* 版本回退：
+	* （1）git reflong    ————(查看所有版本)
+	* （2）git reset --hard 版本号
+* 更新代码（每天来之前先更新一下代码）
+	* git pull
+* 合并分支：
+	* （1）、切换到主分支
+	* （2）、git merge 分支名  ————（合并命令）
+* 分支名分配：
+	* master  唐深丽
+	* dev    孙益柳
+	* test    李铭
+	* pro    刘耀东
