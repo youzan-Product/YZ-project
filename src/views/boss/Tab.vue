@@ -50,16 +50,18 @@
         </div>
 
   <div>
-       <el-button @click="show3 = !show3">展开</el-button>
+   
+       
 
         <div style="margin-top: 20px;">
                 <el-collapse-transition>
                      <div v-show="show3">
                          <Tabinp></Tabinp>
-         
                       </div>
                 </el-collapse-transition>
          </div>
+         <button class="but">筛选</button>
+         <el-button @click="show3 = !show3">展开</el-button> 
   </div>
         
      
@@ -68,7 +70,11 @@
 
 <script>
 import Tabinp from'./Tabinp.vue'
+// import { mapState } from 'vuex'
 export default {
+  // computed:{
+  //   ...mapState(['list'])
+  // },
     components:{
         Tabinp
     },
@@ -139,17 +145,31 @@ export default {
         }
      }
     }
-     .transition-box {
-    margin-bottom: 10px;
-    width: 200px;
-    height: 100px;
-    border-radius: 4px;
-    background-color: #409EFF;
+    .but{
+      height:40px;
+       border-radius: 4px;
+    background-color: #fff;
     text-align: center;
+    line-height: 40px;
     color: rgb(21,91,212);
-    padding: 40px 20px;
+    width:70px;
     box-sizing: border-box;
-    margin-right: 120px;
-  }
+    border:none;
+    border:1px solid #ccc;
+    margin-right:40px;
+
+    }
+  //    .transition-box {
+  //   margin-bottom: 10px;
+  //   width: 200px;
+  //   height: 100px;
+  //   border-radius: 4px;
+  //   background-color: #409EFF;
+  //   text-align: center;
+  //   color: rgb(21,91,212);
+  //   padding: 40px 20px;
+  //   box-sizing: border-box;
+  //   margin-right: 120px;
+  // }
 }
 </style>

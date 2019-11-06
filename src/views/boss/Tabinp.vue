@@ -28,7 +28,7 @@
 
     <div class="inp-two">
            <div class="some-inp">
-          <span>客户身份：</span>
+          <span>性别：</span>
           <el-select v-model="value" placeholder="全部">
             <el-option
                 v-for="item in options3"
@@ -90,11 +90,20 @@
 </template>
 
 <script>
+// import { mapState,mapActions,mapMutations } from 'vuex'
 import Tabmin from './Tabmin.vue'
 export default {
+  // props:['item'],
     components:{
         Tabmin
     },
+    // computed:{
+    //   ...mapState(['list'])
+    // },
+    // methods:{
+    //   ...mapActions(['getList']),
+
+    // },
      data() {
       return {
         options: [{
@@ -134,13 +143,10 @@ export default {
           label: '全部'
         }, {
           value: '选项2',
-          label: '会员'
+          label: '男'
         }, {
           value: '选项3',
-          label: '非会员'
-        }, {
-          value: '选项4',
-          label: '禁止购买名单'
+          label: '女'
         }, 
         ],
         value3: '',
