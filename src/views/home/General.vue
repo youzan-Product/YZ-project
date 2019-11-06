@@ -1,8 +1,21 @@
 <template>
     <div class="general">
-        <Mainheader></Mainheader>
-        <Down></Down>
-        <RealTime></RealTime>
+      <Mainheader></Mainheader>
+      <el-row :gutter="20">
+        <el-col :span="18">
+          <div class="grid-content bg-purple">
+            <Down></Down>
+            <RealTime></RealTime>
+            <Assistant></Assistant>
+          </div>
+        </el-col>
+        
+        <el-col :span="6">
+          <div class="grid-content bg-purple">
+          </div>
+        </el-col>
+      </el-row>
+        
     </div>
 </template>
 
@@ -10,6 +23,7 @@
 import Mainheader from "@/components/Mainheader.vue";
 import Down from "@/views/home/Down.vue";
 import RealTime from "@/views/home/RealTime.vue"
+import Assistant from "@/views/home/Assistant.vue"
 
 export default {
   name: "general",
@@ -17,9 +31,36 @@ export default {
     Mainheader,
     Down,
     RealTime,
+    Assistant
   }
 };
 </script>
 <style lang="scss" scoped>
+.el-row {
+    margin-bottom: 20px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .el-col {
+    border-radius: 4px;
+  }
+  .bg-purple-dark {
+    background: #99a9bf;
+  }
+  .bg-purple {
+    background: #d3dce6;
+  }
+  .bg-purple-light {
+    background: #e5e9f2;
+  }
+  .grid-content {
+    border-radius: 4px;
+    min-height: 36px;
+  }
+  .row-bg {
+    padding: 10px 0;
+    background-color: #f9fafc;
+  }
 </style>
 

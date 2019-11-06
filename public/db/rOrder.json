@@ -1,0 +1,24 @@
+{
+    "err": 0,
+    "msg": "success",
+    "data": [
+        {
+            "left": {
+                "num": "90",
+                "yes_num": "100",
+                "money": "2000.00",
+                "yes_money": "1800.00",
+                "visit": "99",
+                "yes_visit": "69",
+                "customer": "99"
+            },
+            "right":{
+                "target":"20000.00",
+                "progress":"50%",
+                "balance":"1000.00",
+                "settlement":"2000.00"
+            }
+
+        }
+    ]
+}

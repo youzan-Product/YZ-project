@@ -28,12 +28,17 @@ function fetch(api, callback) {
 const store = new Vuex.Store({
     state: {
         navList: [],
+        realList:[],
     },
     mutations: {
         // 边栏列表
         updateNavList(state, payload) {
             state.navList = payload
         },
+        // 实时概况订单列表
+        updateRealList(state, payload){
+            state.realList = payload
+        }
 
     },
     actions: {
@@ -42,6 +47,13 @@ const store = new Vuex.Store({
             fetch('/db/sideBar.json', (data) => {
                 console.log(data)
                 store.commit('updateNavList', data)
+            })
+        },
+        // 获取实时概况订单列表数据
+        getRealList(store) {
+            fetch('/db/rOrder.json', (data) => {
+                console.log(data)
+                store.commit('updateRealList', data)
             })
         }
     }
