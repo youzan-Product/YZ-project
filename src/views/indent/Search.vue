@@ -3,10 +3,12 @@
     <div class="box">
        <el-row type="flex" class="row-bg"  align ='middle' :gutter="10">
            <el-col :span="1.5"><span>订单搜索：</span></el-col>
-          <el-col :span="4"> <el-select  placeholder="请选择" size='medium'>
-     <el-option >
-    </el-option>
-  </el-select></el-col>
+          <el-col :span="4"> 
+            <el-select  placeholder="请选择" size='medium'>
+               <el-option >
+               </el-option>
+            </el-select>
+          </el-col>
           <el-col :span="4"><el-input  placeholder="请输入" size='medium'></el-input></el-col>
        </el-row>
     </div>
@@ -90,14 +92,44 @@
 </template>
 <script>
 export default {
-    data() {
+   data() {
       return {
-      }
-  }
-}
+        pickerOptions: {
+          shortcuts: [{
+            text: '最近一周',
+            onClick(picker) {
+              const end = new Date();
+              const start = new Date();
+              start.setTime(start.getTime() - 3600 * 1000 * 24 * 7);
+              picker.$emit('pick', [start, end]);
+            }
+          }, {
+            text: '最近一个月',
+            onClick(picker) {
+              const end = new Date();
+              const start = new Date();
+              start.setTime(start.getTime() - 3600 * 1000 * 24 * 30);
+              picker.$emit('pick', [start, end]);
+            }
+          }, {
+            text: '最近三个月',
+            onClick(picker) {
+              const end = new Date();
+              const start = new Date();
+              start.setTime(start.getTime() - 3600 * 1000 * 24 * 90);
+              picker.$emit('pick', [start, end]);
+            }
+          }]
+        },
+        value1: '',
+        value2: ''
+      };
+    }
+  };
 </script>
 <style lang='scss' scoped>
 .search{
+  margin-bottom: 16px;
     padding: 16px;
     background: #f7f8fa;
     .box{

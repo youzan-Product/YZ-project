@@ -17,7 +17,8 @@ export default {
 <style lang='scss' scoped>
 .box {
         background: #fff;
-        height: 500px;
+        height: auto;
         padding: 20px;
+        min-width: 1000px;
       }
 </style>
