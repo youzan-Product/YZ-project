@@ -1,13 +1,13 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-// import axios from 'axios';
+import axios from 'axios';
 
 // 使用VUex
 Vue.use(Vuex)
 
 // 用到fetch方法的话就自己打开一下注释   不然会报错
 
-/* function fetch(api, callback) {
+ function fetch(api, callback) {
     // 显示加载中
     axios({
         method: "GET",
@@ -22,18 +22,25 @@ Vue.use(Vuex)
         console.log('接口请求异常', err)
     }).then(() => {  //不论接口是否成功都执行
     })
-} */
+} 
 
 // 创建一个store仓库
 const store = new Vuex.Store({
     state: {
-       
+       list:[]
     },
     mutations: {
-       
+       updataList(state,payload){
+           state.list = payload
+       }
     },
     actions: {
-        
+        getList(store){
+            fetch('/db/list.json',data=>{
+                console.log(data)
+                store.commit('updataList',data)
+            })
+        }
     }
 })
 

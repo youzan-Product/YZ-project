@@ -117,6 +117,7 @@
 </template>
 
 <script>
+
 export default {
     data:function(){
         return{
@@ -199,8 +200,10 @@ export default {
         value3: ''
 
         }
-    }
-      
+        
+    },
+     
+  
 }
 </script>
 
