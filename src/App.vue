@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-<<<<<<< HEAD
  <!-- 用户未登录 -->
     <div v-if='$route.path === "/login"'>
       <router-view name='login'></router-view>
@@ -24,20 +23,16 @@
       </el-container>
     </div>
 </div>
-=======
-
-    <router-view></router-view>
-  </div>
->>>>>>> test
 </template>
 
 <script>
-
+import Header from "@/components/Header.vue";
+import Sidebar from "@/components/Sidebar.vue";
+import Main from "@/components/Main.vue";
 
 export default {
   name: 'app',
   components: {
-<<<<<<< HEAD
     Header,
     Sidebar,
     Main
@@ -51,11 +46,6 @@ export default {
     console.log(this.$route)
   },
 };
-=======
-
-  }
-}
->>>>>>> test
 </script>
 
 <style>
@@ -78,7 +68,6 @@ ul,li{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-<<<<<<< HEAD
 .el-header {
   width: 100%;
   background-color: #fff7cc;
@@ -88,6 +77,4 @@ ul,li{
 .el-main{
   background: rgb(247,248,250);
 }
-=======
->>>>>>> test
 </style>
