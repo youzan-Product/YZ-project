@@ -1,28 +1,33 @@
 <template>
   <div class="sidebar">
-    <a class="logo_wrap">
-      <div class="logo"></div>
-    </a>
-      <div v-for="(item,idx) in navList" :key="idx">
-        <router-link :to="item.path" active-class="nav_on" tag="span">
+      <Sbounced></Sbounced>
+
+      <!-- <div class="logo"></div> -->
+
+    <div v-for="(item,idx) in navList" :key="idx">
+      <router-link :to="item.path" active-class="nav_on" tag="span">
         <li class="nav">
           <i :class="item.iconName"></i>
           <span v-text="item.navName">概况</span>
         </li>
-        </router-link>
-      </div>
-    <div class="barBottom">
-        <i class="el-icon-search"></i>
-        <i class="el-icon-chat-dot-square"></i>
+      </router-link>
     </div>
+    <div class="barBottom">
+      <i class="el-icon-search"></i>
+      <i class="el-icon-chat-dot-square"></i>
+    </div>
+
   </div>
 </template>
 
 <script>
 import { mapState, mapActions, mapMutations } from "vuex";
-
+import Sbounced from "./Sbounced.vue";
 export default {
   name: "sidebar",
+  components: {
+    Sbounced
+  },
   computed: {
     ...mapState(["navList"])
   },
@@ -42,25 +47,25 @@ export default {
   top: 0;
   bottom: 0;
   left: 0;
-  height: 100%;
-  width: 92px;
+  // height: 100%;
+  // width: 92px;
   background-color: #444;
-  cursor: pointer;
-  .logo_wrap {
-    height: 56px;
-    width: 60px;
-    margin: 0px 16px;
-    .logo {
-      width: 32px;
-      height: 32px;
-      background: #fff
-        url("https://img.yzcdn.cn/public_files/2016/05/13/8f9c442de8666f82abaf7dd71574e997.png!60x60.jpg")
-        no-repeat;
-      background-size: 32px 32px;
-      border-radius: 50%;
-      margin: 12px auto 0;
-    }
-  }
+  // cursor: pointer;
+  // .logo_wrap {
+  //   height: 56px;
+  //   width: 60px;
+  //   margin: 0px 16px;
+  //   .logo {
+  //     width: 32px;
+  //     height: 32px;
+  //     background: #fff
+  //       url("https://img.yzcdn.cn/public_files/2016/05/13/8f9c442de8666f82abaf7dd71574e997.png!60x60.jpg")
+  //       no-repeat;
+  //     background-size: 32px 32px;
+  //     border-radius: 50%;
+  //     margin: 12px auto 0;
+  //   }
+  // }
   .nav {
     height: 40px;
     line-height: 40px;

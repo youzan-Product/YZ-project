@@ -30,8 +30,11 @@ function fetch(api, callback) {
 const store = new Vuex.Store({
     state: {
         // master
-        navList: [],
-        realList: [],
+        navList: [],   //边栏
+        realList: [],  //实时概况
+        assList:[],   //全部事项订单
+        matList:[],   //全部事项消息列表
+        toolsList:[], //常用功能
         // dev
         IndList: [],
         IndList2: [],
@@ -48,6 +51,18 @@ const store = new Vuex.Store({
         // 实时概况订单列表
         updateRealList(state, payload) {
             state.realList = payload
+        },
+        // 全部事项数据列表
+        updateAssList(state, payload) {
+            state.assList = payload
+        },
+         // 全部事项消息列表数据
+         updateMatList(state, payload) {
+            state.matList = payload
+        },
+        // 常用功能数据
+        updateToolsList(state, payload) {
+            state.toolsList = payload
         },
 
         // dev
@@ -102,6 +117,28 @@ const store = new Vuex.Store({
                 store.commit('updateRealList', data)
             })
         },
+        // 获取全部事项列表数据
+        getAssList(store) {
+            fetch('/db/ass.json', (data) => {
+                console.log(data)
+                store.commit('updateAssList', data)
+            })
+        },
+        // 获取全部事项消息列表数据
+        getMatList(store) {
+            fetch('/db/matter.json', (data) => {
+                console.log(data)
+                store.commit('updateMatList', data)
+            })
+        },
+        // 获取常用功能列表数据
+        getToolsList(store) {
+            fetch('/db/tool.json', (data) => {
+                console.log(data)
+                store.commit('updateToolsList', data)
+            })
+        },
+
         // dev
         //获取订单数据
         getIndList(store) {

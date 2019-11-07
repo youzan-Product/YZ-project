@@ -14,8 +14,14 @@ import Product from '@/views/product/Product.vue'
 const router = new VueRouter({
     routes: [
         {
-            path:"/home",
+            path:"/general",
             component:General 
+        },
+        // 重定向
+        {
+            path:"/",
+            redirect:"/general"
+            
         },
         {
             path: '/indent',
@@ -26,15 +32,15 @@ const router = new VueRouter({
             component: Boss
         },
         {
+            path:"/product",
+            component:Product
+        },
+        {
             path:"/login",
             components:{
                 login:Login
             }
         },
-        {
-            path:"/product",
-            component:Product
-        }
             
     ]
 })

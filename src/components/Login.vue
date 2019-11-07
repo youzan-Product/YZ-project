@@ -1,81 +1,80 @@
 <template>
-    <div class="login-wrap"> 
-        <el-row :gutter="10">
-            <el-col :xs="8" :sm="6" :md="4" :lg="3" :xl="1">
-                <div class="grid-content bg-purple"></div>
-            </el-col>
-            <el-col :xs="4" :sm="6" :md="8" :lg="9" :xl="11">
-                <div class="grid-content bg-purple-light">
-                    <div class="login-title">
-                        <div>
-                            <img src="../assets/images/loginPic.png" alt="logo">
-                        </div>
-                        <div>
-                            <span>登录</span>
-                       </div>
-                        
-                    </div>
-                    <div class="login-con">
-                        <div class="login-box">
-                            <div class="lo_header">
-                                <span>密码登录</span>
-                                <span>验证码登录</span>
-                            </div>
-                            <div class="users">
-                                <div class="phone-left">
-                                  <LoginDown></LoginDown>
-                                </div>
-                                <div class="phone-right"><input type="text" placeholder="请输入手机号"></div>
-                            </div>
-                            <div class="password">
-                                <el-input placeholder="请输入密码" v-model="input" show-password></el-input>
-                            </div>
-                            <div class="checkbox">
-                                <el-checkbox v-model="checked">三天内自动登录</el-checkbox>
-                            </div>
-                            <div class="lo_btn">
-                                <el-button type="primary" @click='login'>登录</el-button>
-                            </div>
-                            <div class="agren">
-                                <div class="agren_left">
-                                    <el-checkbox v-model="checked2">
-                                    已阅读并同意
-                                    《用户使用协议》
-                                </el-checkbox>
-                                </div>
-                                <div class="agren_right">
-                                    <span>忘记密码</span>
-                                    <span>免费注册</span>
-                                </div>
-                            </div>
+  <div class="login-wrap">
+    <el-row :gutter="10">
+      <el-col :xs="8" :sm="6" :md="4" :lg="3" :xl="1">
+        <div class="grid-content bg-purple"></div>
+      </el-col>
+      <el-col :xs="4" :sm="6" :md="8" :lg="9" :xl="11">
+        <div class="grid-content bg-purple-light">
+          <div class="login-title">
+            <div>
+              <img src="../assets/images/loginPic.png" alt="logo">
+            </div>
+            <div>
+              <span>登录</span>
+            </div>
 
-                        </div>
-                    </div>
+          </div>
+          <div class="login-con">
+            <div class="login-box">
+              <div class="lo_header">
+                <span>密码登录</span>
+                <span>验证码登录</span>
+              </div>
+              <div class="users">
+                <div class="phone-left">
+                  <LoginDown></LoginDown>
                 </div>
-            </el-col>
-            <el-col :xs="4" :sm="6" :md="8" :lg="9" :xl="11">
-                <div class="grid-content bg-purple">
-                    <div class="login_pic">
-                        <div class="picBox">
-                            <img :src="icons.loginPic" alt="">
-                        </div>
-                    </div>
+                <div class="phone-right"><input type="text" placeholder="请输入手机号"></div>
+              </div>
+              <div class="password">
+                <el-input placeholder="请输入密码" v-model="input" show-password></el-input>
+              </div>
+              <div class="checkbox">
+                <el-checkbox v-model="checked">三天内自动登录</el-checkbox>
+              </div>
+              <div class="lo_btn">
+                <el-button type="primary" @click='login'>登录</el-button>
+              </div>
+              <div class="agren">
+                <div class="agren_left">
+                  <el-checkbox v-model="checked2">
+                    已阅读并同意 《用户使用协议》
+                  </el-checkbox>
                 </div>
-            </el-col>
-            <el-col :xs="8" :sm="6" :md="4" :lg="3" :xl="1">
-                <div class="grid-content bg-purple-light">
+                <div class="agren_right">
+                  <span>忘记密码</span>
+                  <span>免费注册</span>
                 </div>
-            </el-col>
-        </el-row>
-        <div class="footer">
-            <a>© 2012 - 2019 Youzan.com</a>
+              </div>
+
+            </div>
+          </div>
         </div>
+      </el-col>
+      <el-col :xs="4" :sm="6" :md="8" :lg="9" :xl="11">
+        <div class="grid-content bg-purple">
+          <div class="login_pic">
+            <div class="picBox">
+              <img :src="icons.loginPic" alt="">
+            </div>
+          </div>
+        </div>
+      </el-col>
+      <el-col :xs="8" :sm="6" :md="4" :lg="3" :xl="1">
+        <div class="grid-content bg-purple-light">
+        </div>
+      </el-col>
+    </el-row>
+    <div class="footer">
+      <a>© 2012 - 2019 Youzan.com</a>
     </div>
+  </div>
 </template>
 
 <script>
 import { icons } from "@/assets/picture";
-import LoginDown from "./LoginDown.vue"
+import LoginDown from "./LoginDown.vue";
 export default {
   name: "login",
   data() {
@@ -86,7 +85,7 @@ export default {
       icons
     };
   },
-  components:{
+  components: {
     LoginDown
   },
   methods: {
@@ -182,7 +181,6 @@ export default {
           -webkit-appearance: none;
           font-size: 14px;
           padding-left: 10px;
-
         }
       }
     }
@@ -192,14 +190,14 @@ export default {
       font-size: 14px;
       text-align: center;
       line-height: 54px;
-      >.el-input{
-          height: 54px;
+      > .el-input {
+        height: 54px;
       }
     }
     > .checkbox {
-        // background: red;
-        height: 28px;
-        margin-top: 20px;
+      // background: red;
+      height: 28px;
+      margin-top: 20px;
     }
     > .lo_btn {
       height: 45px;

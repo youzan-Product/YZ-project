@@ -5,7 +5,7 @@
         {
             "iconName":"el-icon-data-analysis",
             "navName":"概况",
-            "path":"/home"
+            "path":"/general"
         },
         {
             "iconName":"el-icon-price-tag",

@@ -1,13 +1,13 @@
 <template>
-    <div class="header">
-      <div class="header-titel">
-        <div class="title-left">
-          <div>店铺免费试用期不足7天，最多可试用100笔订单，当前剩余100单，为不影响正常经营，请尽快订购；现在订购赠送7天服务期。</div>
-          <div>官方咨询电话：0571-86857988</div>
-        </div>
-        <el-button type="danger" disabled>立即订购</el-button>
+  <div class="header">
+    <div class="header-titel">
+      <div class="title-left">
+        <div>店铺免费试用期不足7天，最多可试用100笔订单，当前剩余100单，为不影响正常经营，请尽快订购；现在订购赠送7天服务期。</div>
+        <div>官方咨询电话：0571-86857988</div>
       </div>
+      <el-button type="danger" disabled>立即订购</el-button>
     </div>
+  </div>
 </template>
 
 <script>

@@ -1,44 +1,46 @@
 <template>
-    <div class="assiatant">
-        <el-row>
-            <el-col :span="6">
-                <div class="grid-content bg-purple">
-                    <div class="ass_left">
-                        <h2>智能助手</h2>
-                        <div>
-                            <img :src="icons.assPic" alt="">
-                        </div>
-                        <div> 
-                            <button>去处理</button> 
-                        </div>
-                    </div>
-
-                </div>
-            </el-col>
-            <el-col :span="18">
-                <div class="grid-content bg-purple-light">
-                    <div class="ass_right">
-                        <el-tabs type="border-card">
-                            <el-tab-pane label="全部事项">
-                                <Matters></Matters>
-                            </el-tab-pane>
-                            <el-tab-pane label="店铺基础">店铺基础</el-tab-pane>
-                            <el-tab-pane label="商品体验">商品体验</el-tab-pane>
-                            <el-tab-pane label="物流体验">物流体验</el-tab-pane>
-                            <el-tab-pane label="售后体验">售后体验</el-tab-pane>
-                            <el-tab-pane label="服务体验">服务体验</el-tab-pane>
-                            <el-tab-pane label="流量表现">流量表现</el-tab-pane>
-                        </el-tabs>
-                    </div>
-                </div>
-            </el-col>
-        </el-row>
-    </div>
+  <div class="assiatant">
+    <el-row>
+      <el-col :span="6">
+         <!-- 智能助手（左） -->
+        <div class="grid-content bg-purple">
+          <div class="ass_left">
+            <h2>智能助手</h2>
+            <div>
+              <img :src="icons.assPic" alt="">
+            </div>
+            <div>
+              <button>去处理</button>
+            </div>
+          </div>
+        </div>
+      </el-col>
+      <el-col :span="18">
+        <!-- 智能助手选项卡（右） -->
+        <div class="grid-content bg-purple-light">
+          <div class="ass_right">
+            <el-tabs type="border-card">
+              <el-tab-pane label="全部事项">
+                <!-- 全部事项组件 -->
+                <Matters></Matters>
+              </el-tab-pane>
+              <el-tab-pane label="店铺基础">店铺基础</el-tab-pane>
+              <el-tab-pane label="商品体验">商品体验</el-tab-pane>
+              <el-tab-pane label="物流体验">物流体验</el-tab-pane>
+              <el-tab-pane label="售后体验">售后体验</el-tab-pane>
+              <el-tab-pane label="服务体验">服务体验</el-tab-pane>
+              <el-tab-pane label="流量表现">流量表现</el-tab-pane>
+            </el-tabs>
+          </div>
+        </div>
+      </el-col>
+    </el-row>
+  </div>
 </template>
 
 <script>
 import { icons } from "@/assets/picture";
-import Matters from "./Matters.vue"
+import Matters from "./Matters.vue";
 
 export default {
   name: "assistant",
@@ -47,8 +49,8 @@ export default {
       icons
     };
   },
-  components:{
-      Matters,
+  components: {
+    Matters
   }
 };
 </script>
@@ -58,7 +60,7 @@ export default {
   margin-top: 10px;
   .ass_left {
     width: 100%;
-    height: 296px;
+    height: 300px;
     border-right: 1px solid #e5e5e5;
     margin: 0 30px 4px 0;
     > h2 {
@@ -88,7 +90,7 @@ export default {
   }
   .ass_right {
     height: 296px;
-    padding: 10px  0px;
+    padding: 10px 0px;
   }
 }
 .el-row {
@@ -103,16 +105,12 @@ export default {
 .bg-purple {
   background: rgb(255, 255, 255);
 }
-.bg-purple-light {
-  background: blue;
-}
 .grid-content {
-  border-radius: 4px;
   min-height: 36px;
 }
 .row-bg {
   padding: 10px 0;
-  background-color: #f9fafc;
+  // background-color: #f9fafc;
 }
 </style>
 

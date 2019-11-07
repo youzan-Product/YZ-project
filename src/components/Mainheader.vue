@@ -1,24 +1,38 @@
 <template>
-    <div class="main_header">
-      <div class="header-left">
-        <span>用户名</span>
-        <span class="trial">试用期</span>
-        <span>SVIP</span>
-        <span>有赞担保</span>
-      </div>
-      
-      <div class="header-right">
+  <div class="main_header">
+    <div class="header-left">
+      <span>用户名</span>
+      <span class="trial">试用期</span>
+      <span>SVIP</span>
+      <span>有赞担保</span>
+    </div>
+
+    <div class="header-right">
+      <!-- <i class="fa fa-user-circle"></i>
+      <span>13200000000</span>
+      <i class="fa fa-angle-right"></i> -->
+      <el-dropdown>
+        <span class="el-dropdown-link">
           <i class="fa fa-user-circle"></i>
           <span>13200000000</span>
           <i class="fa fa-angle-right"></i>
-      </div>
+        </span>
+        <div>
+          <Dropdown></Dropdown>
+        </div>
+      </el-dropdown>
     </div>
+  </div>
 </template>
 
 <script>
+import Dropdown from "./Dropdown.vue";
+
 export default {
   name: "mainheader",
-  
+  components: {
+    Dropdown
+  }
 };
 </script>
 

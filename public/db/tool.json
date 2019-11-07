@@ -1,0 +1,39 @@
+{
+    "err": 0,
+    "msg": "success",
+    "data":[
+        {
+            "iconName":"el-icon-s-management",
+            "toolsName":"发布商品"
+        },
+        {
+            "iconName":"el-icon-s-management",
+            "toolsName":"分销员"
+        },
+        {
+            "iconName":"el-icon-s-management",
+            "toolsName":"多网点"
+        },
+        {
+            "iconName":"el-icon-s-management",
+            "toolsName":"小程序"
+        },
+        {
+            "iconName":"el-icon-s-management",
+            "toolsName":"微信公众号"
+        },
+        {
+            "iconName":"el-icon-s-management",
+            "toolsName":"收入/提现"
+        },
+        {
+            "iconName":"el-icon-s-management",
+            "toolsName":"智能客服"
+        },
+        {
+            "iconName":"el-icon-s-management",
+            "toolsName":"订单查询",
+            "style":"color:'blue'"
+        }
+    ]
+}

@@ -29,12 +29,7 @@
         <span class="radio-one">标签：</span>
         <div class="tab">
           <el-select size="small" v-model="value" placeholder="请选择">
-            <el-option
-              v-for="item in options1"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-            ></el-option>
+            <el-option v-for="item in options1" :key="item.value" :label="item.label" :value="item.value"></el-option>
           </el-select>
         </div>
       </div>
@@ -61,12 +56,7 @@
         <div class="tab">
           <el-select size="small" v-model="value3" placeholder="请选择">
             <el-option-group v-for="group in options" :key="group.label" :label="group.label">
-              <el-option
-                v-for="item in group.options"
-                :key="item.value"
-                :label="item.label"
-                :value="item.value"
-              ></el-option>
+              <el-option v-for="item in group.options" :key="item.value" :label="item.label" :value="item.value"></el-option>
             </el-option-group>
           </el-select>
         </div>
@@ -76,13 +66,7 @@
         <span class="radio-one">备注：</span>
         <div class="numbel">
           <div style="margin: 20px 0;"></div>
-          <el-input
-            type="textarea"
-            placeholder="请输入内容"
-            v-model="textarea"
-            maxlength="30"
-            show-word-limit
-          ></el-input>
+          <el-input type="textarea" placeholder="请输入内容" v-model="textarea" maxlength="30" show-word-limit></el-input>
         </div>
       </div>
 
@@ -97,7 +81,7 @@
 
 <script>
 import { mapState, mapMutations } from "vuex";
-import moment from 'moment'
+import moment from "moment";
 export default {
   methods: {
     ...mapMutations(["updataListArr"]),
@@ -107,12 +91,12 @@ export default {
         num: this.input,
         name: this.input2,
         sex: this.radios,
-        "vip-time": moment(Date.now()).format('YYYY-MM-DD'),
+        "vip-time": moment(Date.now()).format("YYYY-MM-DD"),
         address: this.value3,
         zip: this.value
       };
       //  dialogFormVisible=false,
-      console.log(item)
+      console.log(item);
       this.updataListArr({ type: "insert", item: item });
     }
   },
