@@ -17,7 +17,7 @@
       <span>编辑</span>
     </div>
   </div>
-  <div class="totalBox">
+  <div class="totalBox" v-if="realList && realList[0]">
     <div class="order">
       <span>支付订单数</span>
       <h3 v-text="realList[0].left.num"></h3>
@@ -39,7 +39,7 @@
       <span></span>
     </div>
   </div>
-  <div class="totalBox total_ri">
+  <div class="totalBox total_ri" v-if="realList &&realList[0]">
     <div class="order">
       <span>本月目标（元）</span>
       <h3 v-text="realList[0].right.target">0</h3>
@@ -71,7 +71,7 @@ import { mapState, mapActions, mapMutations } from "vuex";
 
 export default {
   name: "realtime",
-  props:['item'],
+  props: ["item"],
   data: function() {
     // var item1 = [...item1,...this.realList[0].left];
     // console.log(item1)

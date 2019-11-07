@@ -11,7 +11,7 @@ function fetch(api, callback) {
     // 显示加载中
     axios({
         method: "GET",
-        url: "http://localhost:8081" + api,
+        url: "http://localhost:8080" + api,
     }).then(res => {  //接口请求成
         let data = null;
         console.log('res', res)
@@ -29,14 +29,18 @@ function fetch(api, callback) {
 // 创建一个store仓库
 const store = new Vuex.Store({
     state: {
+        // master
         navList: [],
         realList: [],
+        // dev
         IndList: [],
         IndList2: [],
+        // pro
         list: [],
         list2: []
     },
     mutations: {
+        // master
         // 边栏列表
         updateNavList(state, payload) {
             state.navList = payload
@@ -46,6 +50,7 @@ const store = new Vuex.Store({
             state.realList = payload
         },
 
+        // dev
         //表格
         updateIndList(state, payload) {
             state.IndList = payload
@@ -60,6 +65,8 @@ const store = new Vuex.Store({
             state.IndList2 = list.slice((page - 1) * 5, page * 5)
             console.log('--------', state.IndList2)
         },
+
+        // pro
         updataList(state, payload) {
             //    state.list = payload
             //    console.log(state.list)
@@ -80,10 +87,11 @@ const store = new Vuex.Store({
         }
     },
     actions: {
+        // master
         // 获取边栏列表数据
         getNavList(store) {
             fetch('/db/sideBar.json', (data) => {
-                // console.log(data)
+                console.log(data)
                 store.commit('updateNavList', data)
             })
         },
@@ -94,6 +102,7 @@ const store = new Vuex.Store({
                 store.commit('updateRealList', data)
             })
         },
+        // dev
         //获取订单数据
         getIndList(store) {
             fetch('/db/indent.json', (data) => {
@@ -112,6 +121,7 @@ const store = new Vuex.Store({
                 store.commit('updatePage', payload)
             })
         },
+        // pro
         getList(store) {
             fetch('/db/list.json', (data) => {
                 let payload = {
