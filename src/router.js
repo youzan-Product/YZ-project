@@ -8,33 +8,34 @@ import General from '@/views/home/General.vue'
 import Boss from "@/views/boss/Boss.vue"
 import Indent from '@/views/indent/Indent.vue'
 import Login from "@/components/Login.vue"
-
+import Product from '@/views/product/Product.vue'
 
 // 创建所需路由
 const router = new VueRouter({
     routes: [
         {
-            path: "/home",
-            component: General
-        },
-        {
-            path: "/",
-            redirect: "/home"
-        },
-        {
-            path: '/boss',
-            component: Boss
+            path:"/home",
+            component:General 
         },
         {
             path: '/indent',
             component: Indent
         },
         {
+            path: '/boss',
+            component: Boss
+        },
+        {
             path:"/login",
             components:{
                 login:Login
             }
+        },
+        {
+            path:"/product",
+            component:Product
         }
+            
     ]
 })
 
