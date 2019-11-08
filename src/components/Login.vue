@@ -1,20 +1,24 @@
 <template>
   <div class="login-wrap">
+    <!-- 登录头部 -->
+    <div class="login-title">
+      <div class="kong">
+        <div class="login-box">
+          <img src="../assets/images/loginPic.png" alt="logo">
+        </div>
+        <div class="login-box">
+          <span>登录</span>
+        </div>
+      </div>
+
+    </div>
     <el-row :gutter="10">
       <el-col :xs="8" :sm="6" :md="4" :lg="3" :xl="1">
         <div class="grid-content bg-purple"></div>
       </el-col>
       <el-col :xs="4" :sm="6" :md="8" :lg="9" :xl="11">
         <div class="grid-content bg-purple-light">
-          <div class="login-title">
-            <div>
-              <img src="../assets/images/loginPic.png" alt="logo">
-            </div>
-            <div>
-              <span>登录</span>
-            </div>
-
-          </div>
+          <!-- 登录内容 -->
           <div class="login-con">
             <div class="login-box">
               <div class="lo_header">
@@ -47,13 +51,13 @@
                   <span>免费注册</span>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
       </el-col>
       <el-col :xs="4" :sm="6" :md="8" :lg="9" :xl="11">
         <div class="grid-content bg-purple">
+          <!-- 登录右边图片 -->
           <div class="login_pic">
             <div class="picBox">
               <img :src="icons.loginPic" alt="">
@@ -106,10 +110,152 @@ export default {
 <style lang="scss" scoped>
 .login-wrap {
   position: relative;
+  width: 100%;
+  height: 600px;
+  // min-width: 1600px;
+  .login-title {
+    height: 96px;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+    .kong {
+      width: 80%;
+      // padding-left: 200px;
+      position: absolute;
+      left:200px;
+      > .login-box {
+        padding: 50px 0px 21px;
+        float: left;
+      }
+      > div:nth-child(2) {
+        padding-left: 10px;
+        cursor: pointer;
+        > span {
+          border-left: 1px solid #ccc;
+          padding-left: 10px;
+          color: #333;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+  .login-con {
+    height: 404px;
+    padding-top: 40px;
+    width: 100%;
+    > .login-box {
+      margin: 2px 20px;
+      padding: 15px 25px;
+      background: #fff;
+      box-sizing: border-box;
+      box-shadow: 0 0 12px #ccc;
+      > .lo_header {
+        height: 35px;
+        > span {
+          float: left;
+          font-size: 18px;
+          line-height: 20px;
+          margin-top: 15px;
+          padding: 0 15px;
+          box-sizing: border-box;
+          // position: relative;
+        }
+        > span:nth-child(2) {
+          border-left: 2px solid #ccc;
+          cursor: pointer;
+          color: #999;
+        }
+      }
+      > .users {
+        height: 54px;
+        margin-top: 28px;
+        font-size: 14px;
+        text-align: center;
+        box-sizing: border-box;
+        border-bottom: 1px solid #ccc;
+        > .phone-left {
+          float: left;
+        }
+        > .phone-right {
+          float: left;
+          padding-top: 20px;
+          > input {
+            width: 100%;
+            border: none;
+            outline: none;
+            -webkit-appearance: none;
+            font-size: 14px;
+            padding-left: 10px;
+          }
+        }
+      }
+      > .password {
+        height: 54px;
+        padding-top: 18px;
+        font-size: 14px;
+        text-align: center;
+        line-height: 54px;
+        > .el-input {
+          height: 54px;
+        }
+      }
+      > .checkbox {
+        // background: red;
+        height: 28px;
+        margin-top: 20px;
+      }
+      > .lo_btn {
+        height: 45px;
+        margin-top: 10px;
+        > .el-button {
+          width: 100%;
+          height: 45px;
+        }
+      }
+      > .agren {
+        height: 37px;
+        padding-top: 10px;
+        line-height: 37px;
+        > .agren_left {
+          float: left;
+          > p {
+            display: inline-block;
+          }
+        }
+        > .agren_right {
+          float: right;
+          font-size: 12px;
+          > span {
+            height: 14px;
+            color: #3388ff;
+            padding-right: 10px;
+          }
+          > span:nth-child(2) {
+            padding-left: 10px;
+            box-sizing: border-box;
+            border-left: 2px solid #ccc;
+            padding-right: 0px;
+          }
+        }
+      }
+    }
+  }
+  .login_pic {
+    height: 404px;
+    width: 90%;
+    > .picBox {
+      margin-top: 40px;
+      height: 325px;
+      > img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
   .footer {
-    height: 12px;
+    height: 30px;
     position: absolute;
-    bottom: 0;
+    bottom: 0px;
     left: 45%;
     > a {
       font-size: 12px;
@@ -117,140 +263,11 @@ export default {
     }
   }
 }
-.login-title {
-  height: 96px;
-  > div {
-    padding: 50px 0px 21px;
-    float: left;
-  }
-  > div:nth-child(2) {
-    padding-left: 10px;
-    cursor: pointer;
-    > span {
-      border-left: 1px solid #ccc;
-      padding-left: 10px;
-      color: #333;
-      font-size: 16px;
-    }
-  }
-}
-.login-con {
-  height: 404px;
-  padding-top: 40px;
-  width: 90%;
-  > .login-box {
-    margin: 2px 20px;
-    padding: 15px 25px;
-    background: #fff;
-    box-sizing: border-box;
-    box-shadow: 0 0 12px #ccc;
-    > .lo_header {
-      height: 35px;
-      > span {
-        float: left;
-        font-size: 18px;
-        line-height: 20px;
-        margin-top: 15px;
-        padding: 0 15px;
-        box-sizing: border-box;
-        // position: relative;
-      }
-      > span:nth-child(2) {
-        border-left: 2px solid #ccc;
-        cursor: pointer;
-        color: #999;
-      }
-    }
-    > .users {
-      height: 54px;
-      margin-top: 28px;
-      font-size: 14px;
-      text-align: center;
-      box-sizing: border-box;
-      border-bottom: 1px solid #ccc;
-      > .phone-left {
-        float: left;
-      }
-      > .phone-right {
-        float: left;
-        padding-top: 20px;
-        > input {
-          width: 100%;
-          border: none;
-          outline: none;
-          -webkit-appearance: none;
-          font-size: 14px;
-          padding-left: 10px;
-        }
-      }
-    }
-    > .password {
-      height: 54px;
-      padding-top: 18px;
-      font-size: 14px;
-      text-align: center;
-      line-height: 54px;
-      > .el-input {
-        height: 54px;
-      }
-    }
-    > .checkbox {
-      // background: red;
-      height: 28px;
-      margin-top: 20px;
-    }
-    > .lo_btn {
-      height: 45px;
-      margin-top: 10px;
-      > .el-button {
-        width: 100%;
-        height: 45px;
-      }
-    }
-    > .agren {
-      height: 37px;
-      padding-top: 10px;
-      line-height: 37px;
-      > .agren_left {
-        float: left;
-        > p {
-          display: inline-block;
-        }
-      }
-      > .agren_right {
-        float: right;
-        font-size: 12px;
-        > span {
-          height: 14px;
-          color: #3388ff;
-          padding-right: 10px;
-        }
-        > span:nth-child(2) {
-          padding-left: 10px;
-          box-sizing: border-box;
-          border-left: 2px solid #ccc;
-          padding-right: 0px;
-        }
-      }
-    }
-  }
-}
-.login_pic {
-  height: 404px;
-  width: 90%;
-
-  > .picBox {
-    margin-top: 135px;
-    height: 325px;
-    > img {
-      width: 100%;
-      height: 100%;
-    }
-  }
-}
 
 .el-col {
   border-radius: 4px;
+  margin: 0;
+  padding: 0;
 }
 .grid-content {
   border-radius: 4px;

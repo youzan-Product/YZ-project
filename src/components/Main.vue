@@ -12,5 +12,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.main_con{
+  min-width: 1000px;
+}
 </style>
 

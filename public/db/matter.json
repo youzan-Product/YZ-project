@@ -3,61 +3,61 @@
     "msg": "success",
     "data": [
         {
-            "src":"../../assets/images/red_q.png",
+            "iconName":"fa fa-fa",
             "name":"未创建客户分群",
             "desc":"通过对客户行为、属性的分析，更好的针对不同客户进行运营管理",
             "tag":"立即创建"
         },
         {
-            "src":"../../assets/images/red_q.png",
+            "iconName":"fa fa-fa",
             "name":"未设置会员等级",
             "desc":"建立完善的会员成长体系，帮助您更好的维护客户关系及活跃度",
             "tag":"立即设置"
         },
         {
-            "src":"../../assets/images/red_q.png",
+            "iconName":"fa fa-fa",
             "name":"未开启会员储值",
             "desc":"帮助您提升会员忠诚度、增强粘性，持续营销会员，牢牢锁住会员",
             "tag":"立即开启"
         },
         {
-            "src":"../../assets/images/red_q.png",
+            "iconName":"fa fa-fa",
             "name":"未填写客服电话",
             "desc":"建立完善的会员成长体系，帮助您更好的维护客户关系及活跃度",
             "tag":"立即设置"
         },
         {
-            "src":"../../assets/images/red_q.png",
+            "iconName":"fa fa-fa",
             "name":"未设置会员等级",
             "desc":"填写后，可以帮助买家快速联系到您",
             "tag":"立即优化"
         },
         {
-            "src":"../../assets/images/red_q.png",
+            "iconName":"fa fa-fa",
             "name":"未完成店铺认证",
             "desc":"完成认证后可使用转账、提现等功能",
             "tag":"立即认证"
         },
         {
-            "src":"../../assets/images/blue_q.png",
+            "iconName":"fa fa-fa",
             "name":"未完成微信支付实名认证",
             "desc":"微信支付实名认证后可正常使用微信支付能力",
             "tag":"立即认证"
         },
         {
-            "src":"../../assets/images/blue_q.png",
+            "iconName":"fa fa-fa",
             "name":"未订购三方应用",
             "desc":"您可在应用市场获取丰富的营销工具",
             "tag":"立即前往置"
         },
         {
-            "src":"../../assets/images/blue_q.png",
+            "iconName":"fa fa-fa",
             "name":"未绑定微信公众号",
             "desc":"绑定后，在这管理你的公众号，有赞提供比微信后台更强大的功能",
             "tag":"立即绑定"
         },
         {
-            "src":"../../assets/images/blue_q.png",
+            "iconName":"fa fa-fa",
             "name":"分销市场补充货源",
             "desc":"丰富商品品类可更好的拓展获客渠道",
             "tag":"立即选货"

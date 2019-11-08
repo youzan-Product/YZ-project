@@ -17,6 +17,8 @@
           <Recom></Recom>
           <!-- 营销推荐 -->
           <Advice></Advice>
+          <!-- 更多服务 -->
+          <Moresev></Moresev>
           <!-- 底部 -->
           <div class="gen_foot">
             <div>
@@ -32,7 +34,14 @@
           <div class="learn">
             <img :src="icons.learnPic" alt="">
           </div>
+          <!-- 右边栏客服区 -->
+          <Custosev></Custosev>
+          <!-- 产品动态 -->
+          <Dynamic></Dynamic>
+          <!-- 有赞头条 -->
+          <Headlines></Headlines>
         </div>
+       
       </el-col>
     </el-row>
 
@@ -47,6 +56,12 @@ import Assistant from "./Assistant.vue";
 import Tool from "./Tool.vue";
 import Recom from "./Recom.vue";
 import Advice from "./Advice.vue";
+import Moresev from "./Moresev.vue";
+
+import Custosev from "./Custosev.vue";
+import Dynamic from "./Dynamic.vue";
+import Headlines from "./Headlines.vue";
+
 import { icons } from "@/assets/picture";
 
 export default {
@@ -63,7 +78,11 @@ export default {
     Assistant,
     Tool,
     Advice,
-    Recom
+    Moresev,
+    Recom,
+    Custosev,
+    Dynamic,
+    Headlines
   }
 };
 </script>

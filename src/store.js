@@ -35,6 +35,8 @@ const store = new Vuex.Store({
         assList:[],   //全部事项订单
         matList:[],   //全部事项消息列表
         toolsList:[], //常用功能
+        dynList:[],  //产品动态
+        headList:[],  //有赞头条
         // dev
         IndList: [],
         IndList2: [],
@@ -63,6 +65,14 @@ const store = new Vuex.Store({
         // 常用功能数据
         updateToolsList(state, payload) {
             state.toolsList = payload
+        },
+         // 产品动态数据
+        updateDynList(state, payload) {
+            state.dynList = payload
+        }, 
+        // 有赞头条数据
+        updateHeadList(state, payload) {
+            state.headList = payload
         },
 
         // dev
@@ -136,6 +146,20 @@ const store = new Vuex.Store({
             fetch('/db/tool.json', (data) => {
                 console.log(data)
                 store.commit('updateToolsList', data)
+            })
+        },
+        // 获取产品动态列表数据
+        getDynList(store) {
+            fetch('/db/dynamic.json', (data) => {
+                console.log(data)
+                store.commit('updateDynList', data)
+            })
+        },
+        // 获取有赞头条列表数据
+        getHeadList(store) {
+            fetch('/db/headerlines.json', (data) => {
+                console.log(data)
+                store.commit('updateHeadList', data)
             })
         },
 

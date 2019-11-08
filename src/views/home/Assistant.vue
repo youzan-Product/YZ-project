@@ -2,7 +2,7 @@
   <div class="assiatant">
     <el-row>
       <el-col :span="6">
-         <!-- 智能助手（左） -->
+        <!-- 智能助手（左） -->
         <div class="grid-content bg-purple">
           <div class="ass_left">
             <h2>智能助手</h2>
@@ -24,12 +24,25 @@
                 <!-- 全部事项组件 -->
                 <Matters></Matters>
               </el-tab-pane>
-              <el-tab-pane label="店铺基础">店铺基础</el-tab-pane>
-              <el-tab-pane label="商品体验">商品体验</el-tab-pane>
-              <el-tab-pane label="物流体验">物流体验</el-tab-pane>
-              <el-tab-pane label="售后体验">售后体验</el-tab-pane>
-              <el-tab-pane label="服务体验">服务体验</el-tab-pane>
-              <el-tab-pane label="流量表现">流量表现</el-tab-pane>
+              <el-tab-pane label="店铺基础">
+                <Matters></Matters>
+              </el-tab-pane>
+              <el-tab-pane label="商品体验">
+                <!-- 体验组件 -->
+                <Experience></Experience>
+              </el-tab-pane>
+              <el-tab-pane label="物流体验">
+                <Experience></Experience>
+              </el-tab-pane>
+              <el-tab-pane label="售后体验">
+                <Experience></Experience>
+              </el-tab-pane>
+              <el-tab-pane label="服务体验">
+                <Experience></Experience>
+              </el-tab-pane>
+              <el-tab-pane label="流量表现">
+                <Matters></Matters>
+              </el-tab-pane>
             </el-tabs>
           </div>
         </div>
@@ -41,6 +54,7 @@
 <script>
 import { icons } from "@/assets/picture";
 import Matters from "./Matters.vue";
+import Experience from "./Experience.vue";
 
 export default {
   name: "assistant",
@@ -50,7 +64,8 @@ export default {
     };
   },
   components: {
-    Matters
+    Matters,
+    Experience
   }
 };
 </script>

@@ -1,5 +1,6 @@
 <template>
   <div class="matters_wrap">
+
     <!-- 全部事项订单数据 -->
     <div class="matters">
       <div class="mat_menu" v-for="(item, idx) in assList" :key="idx">
@@ -12,9 +13,13 @@
     </div>
     <!-- 全部事项提示消息列表 -->
     <div class="mat_info">
+
       <div class="infoList" v-for="(item,idx) in matList" :key="idx">
         <div class="info_le">
-          <span><img :src="item.src" alt=""> </span>
+          <span class="pic_left">
+            <!-- <img class="qi" :src="item.src" alt="" /> -->
+            <i :class="item.iconName"></i>
+          </span>
           <span v-text="item.name"></span>
           <span v-text="item.desc"></span>
         </div>
@@ -22,6 +27,7 @@
           <span v-text="item.tag"></span>
         </div>
       </div>
+
     </div>
   </div>
 </template>
@@ -31,6 +37,11 @@ import { mapState, mapActions, mapMutations } from "vuex";
 
 export default {
   name: "matters",
+  // data: function() {
+  //   return {
+  //     img: "../../assets/images/red_q.png"
+  //   };
+  // },
   computed: {
     ...mapState(["assList", "matList"])
   },
@@ -91,23 +102,25 @@ export default {
         width: 80%;
         line-height: 18px;
         font-size: 12px;
-        display: flex;
-        justify-content: space-around;
-        > span:nth-child(1) {
+        > .pic_left {
           width: 16px;
           height: 16px;
-          background: #df4545;
-          > img {
-            width: 100%;
-            height: 100%;
+          display: inline-block;
+          // background: #df4545;
+          > i {
+            width: 16px;
+            height: 16px;
+            font-size:16px;
+            color: #df4545;
           }
         }
         > span:nth-child(2) {
-          width: 140px;
+          text-align: center;
+          margin-left: 20px;
         }
         > span:nth-child(3) {
-          width: 360px;
           color: #969799;
+          margin-left: 20px;
         }
       }
       > .info_ri {
