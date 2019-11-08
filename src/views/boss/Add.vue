@@ -72,7 +72,10 @@
 
       <div slot="footer" class="dialog-footer">
         <el-button @click="dialogFormVisible = false">取 消</el-button>
-        <el-button type="primary" @click="add">确 定</el-button>
+        <div @click="add" style="display:inline-block;width:75px;">
+           <el-button type="primary" @click=" dialogFormVisible=false">确 定</el-button>
+        </div>
+       
       </div>
     </el-dialog>
     <span class="fans">粉丝管理</span>
