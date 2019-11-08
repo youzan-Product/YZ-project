@@ -11,13 +11,13 @@ Vue.use(Vuex)
     // 显示加载中
     axios({
         method: "GET",
-        url: "http://localhost:8081" + api,
+        url: "http://localhost:8080" + api,
     }).then(res => {  //接口请求成
         let data = null;
         console.log('res', res)
         if (res.data.err == 0) {
             data = res.data.data
-            console.log('-------------',data)
+            // console.log('-------------',data)
         }
         callback && callback(data)
     }).catch(err => {  //接口请求失败执行
@@ -51,7 +51,36 @@ const store = new Vuex.Store({
                 //    console.log(state.list)
              break;
            }
-       }
+       },
+       updataList2(state,payload){
+                let arr = []
+                // let arr2 = []
+                state.list.map((ele)=>{
+               if(payload.num == ele.vip && payload.sex == ele.sex){
+                   arr.push(ele)                 
+               }
+              
+           })
+                state.list2 = arr  
+                 console.log(state.list2)
+            // arr.map((ele)=>{
+            //     if(ele.sex == payload.sex){
+            //         arr2.push(ele)
+            //     }
+            // })
+            // state.list2 = arr2
+   
+       },
+    //    updataList3(state,payload){
+    //        let arr = []
+    //        state.list.map((ele)=>{
+    //             if(payload.sex == ele.sex){
+    //                arr.push(ele)
+    //                console.log(arr)
+    //            }              
+    //        })
+    //        state.list2 = arr  
+    //    }
 
     },
     actions: {
@@ -59,12 +88,15 @@ const store = new Vuex.Store({
             fetch('/db/list.json',(data) =>{
                 let payload = {
                     page:1,
-                    msg:data
+                    msg:data,
+                    num:'',
+                    sex:''
                 }
                 console.log('------------------',data)
                 store.commit('updataList',payload)
             })
-        }
+        },
+       
     }
 })
 

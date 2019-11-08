@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="max-width:1200px">
     <div class="min-inp">
       <span>购买次数：</span>
       <div class="inp-one">
