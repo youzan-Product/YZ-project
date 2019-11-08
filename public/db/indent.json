@@ -3,84 +3,112 @@
     "msg": "success",
     "data":[
         {
-            "article": "紫金葫芦",
+            "article": "衣服",
             "cost":"200",
             "order":"1",
             "delivery":"快递发货",
             "buyer":"二狗",
-            "status":"已发货"
+            "status":"已发货",
+             "aa":"1"
         },
         {
-            "article": "芭蕉扇",
+            "article": "衣服",
             "cost":"600",
             "order":"1",
             "delivery":"快递发货",
             "buyer":"二狗",
-            "status":"已发货"
+            "status":"已发货",
+            "aa":"1"
         },
         {
-            "article": "金箍棒",
+            "article": "衣服",
             "cost":"1000",
             "order":"2",
             "delivery":"上门自提",
             "buyer":"二狗",
-            "status":"已发货"
+            "status":"已发货",
+            "aa":"1"
         },
         {
-            "article": "紫金葫芦",
+            "article": "鞋子",
             "cost":"200",
             "order":"2",
             "delivery":"快递发货",
             "buyer":"二狗",
-            "status":"已发货"
+            "status":"退款中",
+            "aa":"2"
         },
         {
-            "article": "紫金葫芦",
+            "article": "鞋子",
             "cost":"200",
             "order":"1",
             "delivery":"快递发货",
             "buyer":"二狗",
-            "status":"已发货"
+            "status":"已发货",
+            "aa":"1"
         },
         {
-            "article": "紫金葫芦",
+            "article": "鞋子",
             "cost":"200",
             "order":"1",
             "delivery":"快递发货",
             "buyer":"二狗",
-            "status":"已发货"
+            "status":"已关闭",
+            "aa":"3"
         },
         {
-            "article": "紫金葫芦",
+            "article": "鞋子",
             "cost":"200",
             "order":"1",
             "delivery":"快递发货",
             "buyer":"二狗",
-            "status":"已发货"
+            "status":"已完成",
+            "aa":"4"
         },
         {
-            "article": "紫金葫芦",
+            "article": "裤子",
             "cost":"200",
             "order":"1",
             "delivery":"快递发货",
             "buyer":"二狗",
-            "status":"已发货"
+            "status":"待发货",
+            "aa":"5"
         },
         {
-            "article": "紫金葫芦",
+            "article": "裤子",
             "cost":"200",
             "order":"1",
             "delivery":"快递发货",
             "buyer":"二狗",
-            "status":"已发货"
+            "status":"待付款",
+            "aa":"6"
         },
         {
-            "article": "紫金葫芦",
+            "article": "裤子",
             "cost":"200",
             "order":"1",
             "delivery":"快递发货",
             "buyer":"二狗",
-            "status":"已发货"
+            "status":"待付款",
+            "aa":"6"
+        },
+        {
+            "article": "裤子",
+            "cost":"200",
+            "order":"1",
+            "delivery":"快递发货",
+            "buyer":"二狗",
+            "status":"待付款",
+            "aa":"6"
+        },
+        {
+            "article": "裤子",
+            "cost":"200",
+            "order":"1",
+            "delivery":"快递发货",
+            "buyer":"二狗",
+            "status":"待付款",
+            "aa":"6"
         }
     ]
 }
