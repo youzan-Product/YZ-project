@@ -3,7 +3,7 @@
       <!-- <img src="" alt=""> -->
      
 
-      <div v-if='list2.length'>
+      <div v-if='list2.length!=0'>
         <el-table
                 :data="list2"
                 style="width: 100%"
@@ -115,7 +115,7 @@ export default {
     border:1px solid #ccc;
     background:#fff;
     margin:20px 0;
-    max-width: 1189px;
+    max-width: 1165px;
     margin: 24px auto;
    
     // height:246px;

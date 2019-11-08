@@ -1,21 +1,29 @@
 <template>
   <div class="totle">
+      
       <div class="box">
           <span>全部客户</span>
           <p>0位</p>
       </div>
+    
+      
     <div class="box">
           <span>新增客户</span>
           <p>0位</p>
       </div>
+    
+      
       <div class="box">
           <span>兴趣人群</span>
           <p>0位</p>
       </div>
+     
+      
       <div class="box">
           <span>微信互动粉丝</span>
           <p>0位</p>
       </div>
+    
   </div>
 </template>
 
@@ -33,7 +41,8 @@ export default {
         padding:18px 15px 0;
         background:#f7f8fa;
         border-bottom: 1px solid #ccc;
-        .box{
+            
+            .box{
             width:125px;
             height:60px;
             float:left;
@@ -41,12 +50,20 @@ export default {
             margin:0 8px 16px 0;
             padding:8px 7px;
             font-size:14px;
+            box-sizing: border-box;
+            &:hover{
+                background:white;
+                border:1px solid #155db4;
+                cursor: pointer;
+                
+            }
             >span{
                 color:#155bd4;
             }
             >p{
                 color:#155bd4;
             }
+        
         }
     }
 </style>

@@ -107,91 +107,105 @@ const store = new Vuex.Store({
                 case 'insert':
                     state.list.push(payload.item)
                     console.log(payload.item)
+                    //    console.log(state.list)
                     break;
             }
-        }
-    },
-    actions: {
-        // master
-        // 获取边栏列表数据
-        getNavList(store) {
-            fetch('/db/sideBar.json', (data) => {
-                console.log(data)
-                store.commit('updateNavList', data)
-            })
         },
-        // 获取实时概况订单列表数据
-        getRealList(store) {
-            fetch('/db/rOrder.json', (data) => {
-                console.log(data)
-                store.commit('updateRealList', data)
+        updataList2(state, payload) {
+            let arr = []
+            // let arr2 = []
+            state.list.map((ele) => {
+                if (payload.num == ele.vip && payload.sex == ele.sex) {
+                    arr.push(ele)
+                }
             })
+            state.list2 = arr
+            console.log(state.list2)
         },
-        // 获取全部事项列表数据
-        getAssList(store) {
-            fetch('/db/ass.json', (data) => {
-                console.log(data)
-                store.commit('updateAssList', data)
-            })
-        },
-        // 获取全部事项消息列表数据
-        getMatList(store) {
-            fetch('/db/matter.json', (data) => {
-                console.log(data)
-                store.commit('updateMatList', data)
-            })
-        },
-        // 获取常用功能列表数据
-        getToolsList(store) {
-            fetch('/db/tool.json', (data) => {
-                console.log(data)
-                store.commit('updateToolsList', data)
-            })
-        },
-        // 获取产品动态列表数据
-        getDynList(store) {
-            fetch('/db/dynamic.json', (data) => {
-                console.log(data)
-                store.commit('updateDynList', data)
-            })
-        },
-        // 获取有赞头条列表数据
-        getHeadList(store) {
-            fetch('/db/headerlines.json', (data) => {
-                console.log(data)
-                store.commit('updateHeadList', data)
-            })
-        },
+        actions: {
+            // master
+            // 获取边栏列表数据
+            getNavList(store) {
+                fetch('/db/sideBar.json', (data) => {
+                    console.log(data)
+                    store.commit('updateNavList', data)
+                })
+            },
+            // 获取实时概况订单列表数据
+            getRealList(store) {
+                fetch('/db/rOrder.json', (data) => {
+                    console.log(data)
+                    store.commit('updateRealList', data)
+                })
+            },
+            // 获取全部事项列表数据
+            getAssList(store) {
+                fetch('/db/ass.json', (data) => {
+                    console.log(data)
+                    store.commit('updateAssList', data)
+                })
+            },
+            // 获取全部事项消息列表数据
+            getMatList(store) {
+                fetch('/db/matter.json', (data) => {
+                    console.log(data)
+                    store.commit('updateMatList', data)
+                })
+            },
+            // 获取常用功能列表数据
+            getToolsList(store) {
+                fetch('/db/tool.json', (data) => {
+                    console.log(data)
+                    store.commit('updateToolsList', data)
+                })
+            },
+            // 获取产品动态列表数据
+            getDynList(store) {
+                fetch('/db/dynamic.json', (data) => {
+                    console.log(data)
+                    store.commit('updateDynList', data)
+                })
+            },
+            // 获取有赞头条列表数据
+            getHeadList(store) {
+                fetch('/db/headerlines.json', (data) => {
+                    console.log(data)
+                    store.commit('updateHeadList', data)
+                })
+            },
 
-        // dev
-        //获取订单数据
-        getIndList(store) {
-            fetch('/db/indent.json', (data) => {
-                console.log(data)
-                store.commit('updateIndList', data)
-            })
-        },
-        //分页
-        getPage(store) {
-            fetch('/db/indent.json', (data) => {
-                console.log(data)
-                let payload = {
-                    page: 1,
-                    list: data
-                }
-                store.commit('updatePage', payload)
-            })
-        },
-        // pro
-        getList(store) {
-            fetch('/db/list.json', (data) => {
-                let payload = {
-                    page: 1,
-                    msg: data
-                }
-                console.log('------------------', data)
-                store.commit('updataList', payload)
-            })
+            // dev
+            //获取订单数据
+            getIndList(store) {
+                fetch('/db/indent.json', (data) => {
+                    console.log(data)
+                    store.commit('updateIndList', data)
+                })
+            },
+            //分页
+            getPage(store) {
+                fetch('/db/indent.json', (data) => {
+                    console.log(data)
+                    let payload = {
+                        page: 1,
+                        list: data
+                    }
+                    store.commit('updatePage', payload)
+                })
+            },
+            // pro
+            getList(store) {
+                fetch('/db/list.json', (data) => {
+                    let payload = {
+                        page: 1,
+                        msg: data,
+                        num: '',
+                        sex: ''
+                    }
+                    console.log('------------------', data)
+                    store.commit('updataList', payload)
+                })
+            },
         }
     }
 })

@@ -60,7 +60,7 @@
                       </div>
                 </el-collapse-transition>
          </div>
-         <button class="but">筛选</button>
+         <button class="but" @click='choose'>筛选</button>
          <el-button @click="show3 = !show3">展开</el-button> 
   </div>
         
@@ -69,12 +69,13 @@
 </template>
 
 <script>
+import Use from './Use.js'
 import Tabinp from'./Tabinp.vue'
-// import { mapState } from 'vuex'
+import { mapState,mapMutations } from 'vuex'
 export default {
-  // computed:{
-  //   ...mapState(['list'])
-  // },
+  computed:{
+    ...mapState(['list2'])
+  },
     components:{
         Tabinp
     },
@@ -111,9 +112,34 @@ export default {
         value1: '',
         value2: '',
         value3:'',
-        input:''
+        input:'',
+        valueVip:'',
+        valueSex:''
+
       };
+    },
+    created(){
+      let that = this
+      Use.$on('chat',function(val){
+        that.valueVip = val
+        //  that.valueVip = val.valueSex
+        console.log(val)
+      }),
+      Use.$on('char',function(val){
+        that.valueSex = val
+        console.log(val)
+      })
+      
+    },
+    methods:{
+      ...mapMutations(['updataList2']),
+      // ...mapMutations(['updataList3']),
+      choose(){
+        this.updataList2({num:this.valueVip,sex:this.valueSex})
+        // this.updataList3({})
+      }
     }
+
 }
 </script>
 
