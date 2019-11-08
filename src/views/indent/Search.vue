@@ -9,7 +9,10 @@
                </el-option>
             </el-select>
           </el-col>
-          <el-col :span="4"><el-input  placeholder="请输入" size='medium'></el-input></el-col>
+          <el-col :span="4">
+            <el-input  placeholder="请输入" size='medium' v-model="search">
+              </el-input>
+          </el-col>
        </el-row>
     </div>
 
@@ -49,34 +52,43 @@
     <div class="box">
         <el-row type="flex" class="row-bg"  :gutter="10" align='middle'>
        <el-col :span="1.5">订单状态：</el-col>
-          <el-col :span="4"> <el-select  placeholder="请选择" size='medium'>
-     <el-option ></el-option>
-  </el-select></el-col>
+      <el-col :span="4"> 
+          <el-select  placeholder="请选择" size='medium'>
+            <el-option ></el-option>
+           </el-select>
+      </el-col>
   <el-col :span="1.5">配送方式：</el-col>
-          <el-col :span="4"> <el-select  placeholder="请选择" size='medium'>
-     <el-option ></el-option>
-  </el-select></el-col>
+          <el-col :span="4"> 
+            <el-select  placeholder="请选择" size='medium'>
+              <el-option ></el-option>
+            </el-select>
+          </el-col>
   <el-col :span="1.5">付款方式：</el-col>
-          <el-col :span="4"> <el-select  placeholder="请选择" size='medium'>
-     <el-option>
-    </el-option>
-  </el-select></el-col>
+    <el-col :span="4"> 
+          <el-select  placeholder="请选择" size='medium'>
+             <el-option></el-option>
+           </el-select>
+    </el-col>
        </el-row>
       </div>
 
 
       <div class="box">
         <el-row type="flex" class="row-bg"  :gutter="10" align='middle'>
-       <el-col :span="1.5">订单来源：</el-col>
-          <el-col :span="4"> <el-select  placeholder="请选择" size='medium'>
-     <el-option ></el-option>
-  </el-select></el-col>
-  <el-col :span="1.5">是否加星：</el-col>
-          <el-col :span="4"> <el-select  placeholder="请选择" size='medium'>
-     <el-option >
-    </el-option>
-  </el-select></el-col>
-  </el-row>
+          <el-col :span="1.5">订单来源：</el-col>
+          <el-col :span="4"> 
+            <el-select  placeholder="请选择" size='medium'>
+             <el-option ></el-option>
+            </el-select>
+          </el-col>
+           <el-col :span="1.5">是否加星：</el-col>
+          <el-col :span="4"> 
+            <el-select  placeholder="请选择" size='medium'>
+              <el-option >
+              </el-option>
+            </el-select>
+          </el-col>
+        </el-row>
   </div>
 
   <div>
@@ -122,8 +134,22 @@ export default {
           }]
         },
         value1: '',
-        value2: ''
+        value2: '',
+        search: ''
       };
+    },
+    computed:{
+     tables:function(){
+        var search=this.search;
+        if(search){
+          return  this.tableData.filter(function(dataNews){
+            return Object.keys(dataNews).some(function(key){
+              return String(dataNews[key]).toLowerCase().indexOf(search) > -1
+            })
+          })
+        }
+        return this.tableData
+      }
     }
   };
 </script>

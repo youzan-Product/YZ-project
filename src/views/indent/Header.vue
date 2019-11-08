@@ -22,6 +22,7 @@ export default {
     .el-col {
       border-radius: 4px;
       height: 100%;
+      background-color:#fff
       
     }
     .bg-purple-dark {
@@ -38,6 +39,7 @@ export default {
         float: right;
         margin-right: 10px;
         margin-top: 13px;
+        vertical-align: baseline;
        }
       }
     

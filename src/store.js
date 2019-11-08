@@ -32,11 +32,11 @@ const store = new Vuex.Store({
         // master
         navList: [],   //边栏
         realList: [],  //实时概况
-        assList:[],   //全部事项订单
-        matList:[],   //全部事项消息列表
-        toolsList:[], //常用功能
-        dynList:[],  //产品动态
-        headList:[],  //有赞头条
+        assList: [],   //全部事项订单
+        matList: [],   //全部事项消息列表
+        toolsList: [], //常用功能
+        dynList: [],  //产品动态
+        headList: [],  //有赞头条
         // dev
         IndList: [],
         IndList2: [],
@@ -58,18 +58,18 @@ const store = new Vuex.Store({
         updateAssList(state, payload) {
             state.assList = payload
         },
-         // 全部事项消息列表数据
-         updateMatList(state, payload) {
+        // 全部事项消息列表数据
+        updateMatList(state, payload) {
             state.matList = payload
         },
         // 常用功能数据
         updateToolsList(state, payload) {
             state.toolsList = payload
         },
-         // 产品动态数据
+        // 产品动态数据
         updateDynList(state, payload) {
             state.dynList = payload
-        }, 
+        },
         // 有赞头条数据
         updateHeadList(state, payload) {
             state.headList = payload
